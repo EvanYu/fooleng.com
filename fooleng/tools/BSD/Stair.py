@@ -33,7 +33,11 @@ class Stair:
     # 梯板厚度
     @property
     def h_1(self):
-        return float('%.3f' % (self.L / self.scon / self.n))
+        h_1 = float('%.3f' % (self.L / self.scon / self.n))
+        if h_1 < 0.1:
+            return 0.100
+        else:
+            return h_1
 
     # 梯段折算厚度
     @property
